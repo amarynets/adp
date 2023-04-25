@@ -7,8 +7,6 @@ services:
       - .env
     environment:
       MYSQL_HOST: db
-    volumes:
-      - .:/adp
     ports:
       - 8000:8000
     networks:
@@ -39,3 +37,4 @@ services:
 
 networks:
   adpnet:
+    driver: bridge
