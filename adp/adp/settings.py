@@ -26,7 +26,9 @@ SECRET_KEY = "django-insecure-aicfm$1esaguqwjjk=-ktsbemyi-2+p@2982^#yi-4_2b14g9h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '0.0.0.0'
+]
 
 
 # Application definition
@@ -88,7 +90,6 @@ DATABASES = {
         "PASSWORD": os.environ.get('MYSQL_PASSWORD'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators

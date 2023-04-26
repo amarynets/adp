@@ -2,11 +2,10 @@ version: '3.8'
 services:
   web:
     build: .
-    command: python manage.py runserver 0:8000
     env_file:
       - .env
     environment:
-      MYSQL_HOST: db
+      - MYSQL_HOST=db
     ports:
       - 8000:8000
     networks:
@@ -20,19 +19,10 @@ services:
     - '3306:3306'
     volumes:
       - ../db_app:/var/lib/mysql
-#    env_file:
-#      - .env
+    env_file:
+      - .env
     networks:
       - adpnet
-    environment:
-      MYSQL_DATABASE: "adp"
-      MYSQL_USER: "django"
-      MYSQL_PASSWORD: "qwerty"
-      MYSQL_ROOT_PASSWORD: "qwerty"
-#      MYSQL_DATABASE: "${MYSQL_DATABASE}"
-#      MYSQL_USER: "${MYSQL_USER}"
-#      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
-#      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
     restart: always
 
 networks:
